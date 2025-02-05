@@ -1,0 +1,21 @@
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+
+# Build de React
+build/
+dist/
+
+# Variables de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de logs y sistema
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
