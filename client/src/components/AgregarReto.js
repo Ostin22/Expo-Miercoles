@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AgregarReto.css'; // Asegúrate de importar el archivo CSS
 
 function AgregarReto() {
   const [nombre, setNombre] = useState('');
@@ -10,7 +11,7 @@ function AgregarReto() {
       alert('Todos los campos son obligatorios');
       return;
     }
-    const body = { nombre, descripcion, puntos }; // Define el objeto body correctamente
+    const body = { nombre, descripcion, puntos };
 
     try {
       const API_URL = process.env.REACT_APP_API_URL;
@@ -19,7 +20,6 @@ function AgregarReto() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      
 
       if (response.ok) {
         alert('Reto guardado exitosamente');
@@ -35,27 +35,29 @@ function AgregarReto() {
   };
 
   return (
-    <div id="container">
-      <h1 id="titulo">Agregar reto</h1>
-      <input
-        type="text"
-        value={nombre}
-        onChange={(e) => setNombre(e.target.value)}
-        placeholder="Nombre del reto"
-      />
-      <input
-        type="text"
-        value={descripcion}
-        onChange={(e) => setDescripcion(e.target.value)}
-        placeholder="Descripción del reto"
-      />
-      <input
-        type="text"
-        value={puntos}
-        onChange={(e) => setPuntos(e.target.value)}
-        placeholder="Puntos del reto"
-      />
-      <button onClick={guardarDatos}>Guardar Reto</button>
+    <div className="form-container">
+      <div className="subir-prueba-form">
+        <h2>Agregar reto</h2>
+        <input
+          type="text"
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+          placeholder="Nombre del reto"
+        />
+        <input
+          type="text"
+          value={descripcion}
+          onChange={(e) => setDescripcion(e.target.value)}
+          placeholder="Descripción del reto"
+        />
+        <input
+          type="text"
+          value={puntos}
+          onChange={(e) => setPuntos(e.target.value)}
+          placeholder="Puntos del reto"
+        />
+        <button onClick={guardarDatos}>Guardar Reto</button>
+      </div>
     </div>
   );
 }

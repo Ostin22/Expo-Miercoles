@@ -51,7 +51,7 @@ function Header({ auth, setAuth }) {
                 <button className="nav-link" onClick={() => navigate("/agregar-reto")}>Agregar un nuevo reto</button>
               </li>
               <li className="nav-item">
-                <span className="navbar-text">Puntaje Obtenido:</span>
+                <span className="navbar-text"></span>
               </li>
             </ul>
           </div>
